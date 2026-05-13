@@ -1,5 +1,10 @@
 let shoppingList = [];
 
+function syncList() {
+  const list_dom = document.getElementById("shopping-list")
+  list_dom.innerHTML = shoppingList.map(x => "<li>" + x + "</li>").join("\n")
+}
+
 function addItem() {
   /**
    * =========================================
@@ -20,6 +25,14 @@ function addItem() {
    * - shoppingList.length で現在の件数を取得できる
    * =========================================
    */
+  const item_dom = document.getElementById("item-input")
+  const item_name = item_dom.value
+  if(item_name==""){
+    return
+  }
+  item_dom.value = ""
+  shoppingList.push(item_name)
+  syncList()
 }
 
 function removeLastItem() {
@@ -38,6 +51,8 @@ function removeLastItem() {
    * - ul.lastElementChild.remove() で最後の要素を削除できる
    * =========================================
    */
+  shoppingList.pop()
+  syncList()
 }
 
 function clearItems() {
@@ -54,4 +69,6 @@ function clearItems() {
    * - document.getElementById('shopping-list').innerHTML = '' でリストを空にする
    * =========================================
    */
+  shoppingList = []
+  syncList()
 }

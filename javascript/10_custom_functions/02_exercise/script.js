@@ -12,6 +12,15 @@ function addItem(text) {
  * showMessage(text, type)
  * =====================================
  */
+const showMessage = (msg, status) => {
+  if (status === "success") {
+    addItem("✅" + msg);
+  } else if (status === "error") {
+    addItem("❌" + msg);
+  } else {
+    addItem(msg)
+  }
+}
 
 function run() {
   const list = document.getElementById('list');

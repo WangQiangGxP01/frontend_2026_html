@@ -24,4 +24,17 @@ function runLoop() {
    * - %（余り）を使う
    * =========================================
    */
+  for (var i = 1; i <= 20; i++) {
+    var x = String(i)
+    if (i % 5 === 0 && i % 3 === 0) {
+      x = "FizzBuzz"
+    } else if (i % 5 === 0) {
+      x = "Buzz"
+    } else if (i % 3 === 0) {
+      x = "Fizz"
+    }
+    const p = document.createElement('p')
+    p.textContent = x
+    list.appendChild(p)
+  }
 }

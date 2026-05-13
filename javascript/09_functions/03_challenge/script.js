@@ -18,6 +18,16 @@ function addGrade(text) {
  * ================================================
  */
 
+
+calculateGrade = (score) => {
+  const scoreTable = [50, 70, 90]
+  const gradeTable = "FCBA".split("")
+  for (var i = 0; i < scoreTable.length; i++) {
+    if (score < scoreTable[i]) return gradeTable[i];
+  }
+  return gradeTable[gradeTable.length - 1]
+}
+
 function runChallenge() {
   const list = document.getElementById('grade-list');
   list.innerHTML = '';

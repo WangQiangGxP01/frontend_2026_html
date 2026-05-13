@@ -16,6 +16,10 @@ function addParagraph() {
    * - document.getElementById('output').appendChild() で追加する
    * =========================================
    */
+  let new_p = document.createElement('p');
+  count++;
+  new_p.textContent = "Btn pushed " + count + " times.";
+  document.getElementById("output").appendChild(new_p);
 }
 
 function resetOutput() {
@@ -31,4 +35,6 @@ function resetOutput() {
    * - element.textContent = '' で中身を空にできる
    * =========================================
    */
+  document.getElementById("output").textContent = "";
+  count = 0
 }

@@ -7,4 +7,10 @@ function parseStation() {
   // ヒント: .slice(index + 1) でセミコロンより後の部分（駅名）を取得する
   // ヒント: テンプレートリテラルで "コード: 駅名" の形式に組み立てる
   // ヒント: #station-output の textContent に設定する
+  const baseStr = document.getElementById("station-data").value
+  const stationCode = baseStr.slice(0, 3)
+  const stationData = baseStr.slice(3, baseStr.indexOf(';'))
+  const stationName = baseStr.slice(baseStr.indexOf(';')+1)
+
+  document.getElementById("station-output").innerHTML = stationCode.toUpperCase() + ":" + stationName
 }

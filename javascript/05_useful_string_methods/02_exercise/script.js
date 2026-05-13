@@ -14,4 +14,7 @@ function fixCityName() {
    * - 2つを + で連結する
    * =========================================
    */
+  const originStr = document.getElementById("city-input").value
+  const reconstruct = originStr.slice(0, 1).toUpperCase() + originStr.slice(1).toLowerCase()
+  document.getElementById("city-output").innerHTML = reconstruct
 }

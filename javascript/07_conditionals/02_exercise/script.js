@@ -17,4 +17,22 @@ function showWeatherMessage() {
    * - document.getElementById('weather-select').value で選択値を取得できる
    * =========================================
    */
+  const weather = document.getElementById("weather-select").value
+  const msg_dom = document.getElementById("weather-message")
+  if (weather === "sunny") {
+    msg_dom.innerHTML = "「今日は晴れです。お出かけ日和ですね！」"
+    return
+  } else if (weather === "cloudy") {
+    msg_dom.innerHTML = "「今日は曇りです。念のため傘を持っていきましょう。」"
+    return
+  } else if (weather === "rainy") {
+    msg_dom.innerHTML = "「今日は雨です。傘を忘れずに！」"
+    return
+  } else if (weather === "snowy") {
+    msg_dom.innerHTML = "「今日は雪です。暖かくして出かけましょう。」"
+    return
+  } else {
+    msg_dom.innerHTML = "「天気情報が不明です。」"
+    return
+  }
 }

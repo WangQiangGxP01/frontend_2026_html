@@ -24,6 +24,17 @@ function addItem(text) {
  * ヒント: total * (1 - percent / 100)
  * ===========================================
  */
+const calculateTotal = (prices) => {
+  var x = 0;
+  for (var i = 0; i < prices.length; i++) {
+    x += prices[i];
+  }
+  return x;
+}
+
+const applyDiscount = (total, percent) => {
+  return total * (1 - percent / 100)
+}
 
 function runChallenge() {
   const list = document.getElementById('cart-list');

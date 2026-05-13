@@ -15,4 +15,17 @@ function calculate(operator) {
    * - if / else if を使って演算子を判定する
    * =========================================
    */
+
+  const table = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+    "*": (a, b) => a * b,
+    "/": (a, b) => a / b,
+  }
+
+  const num1 = Number(document.getElementById('num1').value)
+  const num2 = Number(document.getElementById('num2').value)
+
+  const result_dom = document.getElementById('result')
+  result_dom.textContent = table[operator](num1, num2)
 }

@@ -6,4 +6,11 @@ function calcTip() {
   // ヒント: 1人分 = 合計 / 人数
   // ヒント: toFixed(2) で小数点2桁に丸める
   // ヒント: document.getElementById('tip-result').innerHTML に表示する
+  const dom_ids = ['bill', 'tip-rate', 'people']
+  const params = {}
+  dom_ids.map(id => params[id] = Number(document.getElementById(id).value))
+  const result_dom = document.getElementById('tip-result')
+  console.log(params)
+  result_dom.innerHTML = params.people * (params.bill * (1 + params["tip-rate"] / 100))
+
 }

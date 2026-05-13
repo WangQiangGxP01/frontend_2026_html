@@ -26,4 +26,14 @@ function showProfile() {
    * - name, age, job それぞれに同じ手順を繰り返す
    * =========================================
    */
+  const name = '王墻'
+  const age = 29
+  const job = 'Programmer'
+
+  const table = [['name', 'age', 'job'], [name, age, job]]
+  for (var i = 0; i < 3; i++) {
+    const p = document.createElement('p');
+    p.textContent = table[0][i] + ":" + table[1][i];
+    output.appendChild(p)
+  }
 }

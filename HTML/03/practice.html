@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Session 3: テキストを意味のある構造にする</title>
   <link rel="stylesheet" href="../lesson-layout.css" />
 </head>
+
 <body>
   <header class="page-header">
     <a href="../index.html" class="back-button">← HTML 一覧へ</a>
@@ -35,14 +37,17 @@
         <li>ブロック要素は縦に積まれ、インライン要素は文中で流れる</li>
         <li>strongは重要度、bは視覚強調が主目的</li>
         <li>見出し階層は文書アウトラインに直結し、アクセシビリティに影響する</li>
-        <ul><li>正しく設定することでテキストリーダーなどでも正しく読み上げられるため、目の見えないユーザーにも情報が伝わる</li></ul>
+        <ul>
+          <li>正しく設定することでテキストリーダーなどでも正しく読み上げられるため、目の見えないユーザーにも情報が伝わる</li>
+        </ul>
       </ul>
     </section>
 
     <section class="panel">
       <h2>参考リンク</h2>
       <ul class="link-list">
-        <li><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals" target="_blank" rel="noopener">MDN: HTMLテキストの基礎</a></li>
+        <li><a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/HTML_text_fundamentals"
+            target="_blank" rel="noopener">MDN: HTMLテキストの基礎</a></li>
       </ul>
     </section>
 
@@ -51,13 +56,18 @@
       <!-- ↓ 下のpタグの中身を、h2・h3・p・ul・li などのタグに分けて整理してみよう -->
       <!-- ↓ 例: 「わたしの学習記録」→ <h2>わたしの学習記録</h2> に変える -->
       <!-- ↓ 例: 「重要: 〜」の部分 → <strong>重要: 〜</strong> で囲んでみよう -->
-      <p>
-        わたしの学習記録 今日はHTMLの見出しと段落を学習した。次回はリンクと画像に進む。
-        学習メモ セマンティクスを意識すると読みやすくなる。重要: 見出しは順番に使う。
-      </p>
+      <h1>わたしの学習記録</h1>
+
+      <p>今日はHTMLの見出しと段落を学習した。次回はリンクと画像に進む。</p>
+      <h2>学習メモ</h2>
+      <ul>
+        <li>セマンティクスを意識すると読みやすくなる。</li>
+      </ul>
+      <strong>重要: </strong>見出しは順番に使う。
     </section>
   </main>
 
   <script src="../lesson-nav.js"></script>
 </body>
+
 </html>

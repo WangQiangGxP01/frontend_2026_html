@@ -25,6 +25,9 @@ const book = {
   author: "田中 一郎",
   year: 2023,
   pages: 320,
+  describe: function () {
+    return "「" + this.title + "（" + this.author + ", " + this.year + ", " + this.pages + "ページ）」";
+  }
 }
 
 function run() {

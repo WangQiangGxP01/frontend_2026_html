@@ -19,7 +19,12 @@ function addItem(text) {
   list.appendChild(li);
 }
 
-function showMessage(text, type) {
+function showMessage(text: string, type: 'success' | 'error') {
+  switch (type) {
+    case 'success': return addItem("✅:" + text)
+    case 'error': return addItem("❌" + text)
+    default: return addItem(text)
+  }
   // ここに実装
 }
 

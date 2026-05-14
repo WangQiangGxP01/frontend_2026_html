@@ -17,9 +17,7 @@ function addItem(text) {
  * =============================================
  */
 
-function celsiusToFahrenheit(celsius) {
-  // ここに実装
-}
+const celsiusToFahrenheit = (c_temp: number) => Number(c_temp) * 9 / 5 + 32
 
 function run() {
   const list = document.getElementById('list');

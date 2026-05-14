@@ -16,8 +16,12 @@ function addItem(text) {
  * ===========================================
  */
 
-function calculateTotal(prices) {
-  // ここに実装
+const calculateTotal = (prices: Array<number>) => {
+  var x = 0;
+  for (var i = 0; i < prices.length; i++) {
+    x += prices[i];
+  }
+  return x;
 }
 
 /**
@@ -30,8 +34,8 @@ function calculateTotal(prices) {
  * ===========================================
  */
 
-function applyDiscount(total, percent) {
-  // ここに実装
+const applyDiscount = (total: number, percent: number) => {
+  return total * (1 - percent / 100)
 }
 
 function runChallenge() {

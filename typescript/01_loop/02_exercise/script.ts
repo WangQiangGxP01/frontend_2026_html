@@ -1,4 +1,4 @@
-function addItem(text) {
+function addItem(text: number | string): void {
   const list = document.getElementById('list');
   const li = document.createElement('li');
   li.textContent = text;
@@ -46,5 +46,5 @@ function runLoop() {
    * なぜエラーになるか確認してください
    */
 
-  // addItem(true);
+  addItem(true);
 }

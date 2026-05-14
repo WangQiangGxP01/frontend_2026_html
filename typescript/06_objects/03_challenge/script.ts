@@ -21,6 +21,26 @@ function addResult(text: string): void {
  * - getRaise(percent: number): number
  * =============================================
  */
+class Employee {
+  name: string = ""
+  department: string = ""
+  salary: number = 0
+
+  constructor(name: string, department: string, salary: number) {
+    this.name = name;
+    this.department = department;
+    this.salary = salary;
+  }
+
+  introduce(): string {
+    return this.name + "さん（" + this.department + "部）の給与は" + this.salary + "円です";
+  }
+
+  getRaise(rate: number): number {
+    this.salary *= 1 + rate / 100;
+    return Math.round(this.salary);
+  }
+}
 
 function runChallenge(): void {
   const list = document.getElementById("result-list") as HTMLUListElement;

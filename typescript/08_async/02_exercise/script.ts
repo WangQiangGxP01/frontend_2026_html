@@ -29,11 +29,12 @@ function addLog(text: string): void {
 
 function delayMessage(
   // ここに型を付けてください
-  message,
-  delay,
-  callback,
+  message: string,
+  delay: number,
+  callback: (msg: string) => void,
 ) {
   // ここに実装してください
+  setTimeout(() => { callback(message) }, delay)
 }
 
 /**

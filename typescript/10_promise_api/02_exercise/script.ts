@@ -1,18 +1,18 @@
 // ─── 模擬API（型を付けてください） ─────────────────────────
 
-function fetchName() /* : Promise<string> */ {
+function fetchName(): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => resolve("田中 花子"), 600);
   });
 }
 
-function fetchAge() /* : Promise<number> */ {
+function fetchAge(): Promise<number> {
   return new Promise((resolve) => {
     setTimeout(() => resolve(22), 400);
   });
 }
 
-function fetchCity() /* : Promise<string> */ {
+function fetchCity(): Promise<string> {
   return new Promise((resolve) => {
     setTimeout(() => resolve("東京"), 500);
   });
@@ -55,6 +55,10 @@ function runAll() /* : void */ {
   list.innerHTML = "";
 
   // ここにコードを書いてください
+  Promise.all([fetchName(), fetchAge(), fetchCity()]).then(
+    ([name, age, city]) => [['name', name], ['age', age], ['city', city]].map(pair => addItem(pair[0] + ":" + String(pair[1])))
+  ).catch(err => addItem("ERROR:" + err.message))
+
 }
 
 // HTMLから呼び出す

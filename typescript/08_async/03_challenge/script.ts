@@ -15,6 +15,16 @@ function addLog(text: string): void {
  * =============================================
  */
 
+interface User {
+  id: number;
+  name: string;
+}
+
+interface OrderData {
+  user: User;
+  orders: string[];
+}
+
 /**
  * =============================================
  * fetchUser を作ってください
@@ -56,6 +66,15 @@ function addLog(text: string): void {
  * =============================================
  */
 
+
+const fetchUser = (id: number, callback: (user: User) => void) => setTimeout(() => callback({ id: id, name: "田中" }), 500)
+const fetchOrders = (user: User, callback: (data: OrderData) => void) => setTimeout(() => {
+  callback({ user: user, orders: ["注文A", "注文B"] })
+}, 700);
+const calcTotal = (data: OrderData, callback: (total: number) => void) => setTimeout(() => {
+  callback(data.orders.length)
+}, 300);
+
 function runChallenge(): void {
   const log = document.getElementById('log') as HTMLUListElement;
   log.innerHTML = '';
@@ -84,7 +103,21 @@ function runChallenge(): void {
    * を表示する
    * =============================================
    */
+
+  fetchUser(233, (user) => {
+    addLog(`[${elapsed()}] User fetched:` + user.name);
+    fetchOrders(user, (order_info) => {
+      addLog(`[${elapsed()}] Order fetched:` + order_info.orders.join(","));
+      calcTotal({ user: order_info.user, orders: order_info.orders }, (length) => {
+        addLog(`[${elapsed()}] Calc completed:`);
+        addLog("ユーザー: " + user.name + " / 注文数: " + length.toFixed(0))
+      })
+    })
+  })
+
 }
 
 // HTMLから呼び出す
 (window as any).runChallenge = runChallenge;
+
+

@@ -9,12 +9,20 @@
  * =============================================
  */
 
-// カウント変数
-let count = 0;
+const dgetid = (id: string) => document.getElementById(id)
+const dom_add = (dom: HTMLElement, tag: string, content: string) => {
+    const new_node = document.createElement(tag)
+    new_node.innerHTML = content
+    dom.appendChild(new_node)
+    return new_node
+}
+const dom_update = (dom: HTMLElement, new_content: string) => {
+    dom.innerHTML = new_content
+}
 
-// 要素取得
-const btn = document.getElementById('countBtn');
-const display = document.getElementById('countDisplay');
+var count = 0
+const btn_dom = dgetid('countBtn')
+const display_dom = dgetid("countDisplay")
 
-// イベント追加
-// ここに実装
+btn_dom.style.userSelect = 'none'
+btn_dom.addEventListener('click', () => { count += 1; dom_update(display_dom, count); })

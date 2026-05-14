@@ -25,6 +25,15 @@ const jsonData: string = `{
  * =============================================
  */
 
+type Product = {
+  store: string;
+  products: {
+    name: string,
+    price: number,
+    inStock: boolean,
+  }[]
+}
+
 function run(): void {
   const list = document.getElementById("list") as HTMLUListElement;
   list.innerHTML = "";
@@ -44,6 +53,14 @@ function run(): void {
 
   // 型チェック
   // data.products[0].price = "100";
+
+  const shop: Product = JSON.parse(jsonData)
+  console.log(shop)
+  for (const item of shop.products) {
+    const result = String(item.name) + ": " + item.price + "円（在庫:" + (Boolean(item.inStock) ? "あり" : "なし") + "）"
+    console.log(result)
+    addItem(result)
+  }
 }
 
 (window as any).run = run;

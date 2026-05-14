@@ -2,14 +2,20 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "strict": true, 
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "bundler",
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "moduleDetection": "force"
   },
-  "include": ["typescript/**/*.ts"]
+  "include": [
+    "typescript/**/*.ts"
+  ]
 }

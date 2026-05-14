@@ -18,7 +18,13 @@ function addGrade(text) {
   list.appendChild(li);
 }
 
-function calculateGrade(score) {
+function calculateGrade(score: number) {
+  const scoretable = [50, 70, 90];
+  const gradetable = "FCBA".split("")
+  for (const [i, score_lim] of scoretable.entries()) {
+    if (score < score_lim) return gradetable[i];
+  }
+  return gradetable[gradetable.length - 1]
   // ここに実装
 }
 

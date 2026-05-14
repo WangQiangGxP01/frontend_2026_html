@@ -6,7 +6,7 @@ function addItem(text) {
   list.appendChild(li);
 }
 
-function greet(name) {
+function greet(name: string): string {
   return 'こんにちは、' + name + 'さん！';
 }
 
@@ -27,7 +27,7 @@ function runDemo() {
    * 型を付けたあとに試してください
    */
 
-  // greet(123);
+  greet(123);
 }
 
 // HTMLから呼び出すために必要

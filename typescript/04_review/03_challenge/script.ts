@@ -15,10 +15,9 @@ function addResult(text) {
  * - 小数点2桁にする
  * =============================================
  */
-function calcBMI(weight, height) {
-  // ここに実装
+function calcBMI(weight: number, height: number) {
+  return (Number(weight) / (Number(height) ** 2)).toFixed(2)
 }
-
 /**
  * =============================================
  * 復習：getBMICategory を完成させる
@@ -27,8 +26,14 @@ function calcBMI(weight, height) {
  * - 戻り値に型をつける
  * =============================================
  */
-function getBMICategory(bmi) {
-  // ここに実装
+function getBMICategory(bmi: number) {
+  const table = [18.5, 25, 30]
+  const category = ["低体重", "普通体重", "過体重", "肥満"];
+  for (const [i, max_bmi] of table.entries()) {
+    if (bmi < max_bmi)
+      return category[i];
+  }
+  return category[category.length - 1];
 }
 
 function runChallenge() {

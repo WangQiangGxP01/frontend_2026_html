@@ -17,8 +17,14 @@ function addItem(text) {
  */
 
 const book = {
-  // ここに実装
-};
+  title: "JavaScript入門",
+  author: "田中 一郎",
+  year: 2023,
+  pages: 320,
+  describe: function () {
+    return "「" + this.title + "（" + this.author + ", " + this.year + ", " + this.pages + "ページ）」";
+  }
+}
 
 function run() {
   const list = document.getElementById('list');

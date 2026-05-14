@@ -41,6 +41,16 @@ function clearLog(ulId) {
 function runSettled() {
   clearLog('log-settled');
   // ここにコードを書いてください
+  Promise.allSettled(requests).then((results) => {
+    console.log(results)
+    results.map((result) => {
+      addLog("log-settled",
+        result.status === 'fulfilled' ?
+          "✅ 成功: " + result.value :
+          "❌ 失敗: " + result.reason
+      )
+    })
+  })
 }
 
 // 問題2: timeout(ms) 関数を実装してください
@@ -48,6 +58,11 @@ function runSettled() {
 
 function timeout(ms) {
   // ここにコードを書いてください
+  return new Promise((_, reject) => {
+    setTimeout(() => {
+      reject(new Error("TIMEOUT"))
+    }, ms);
+  })
 }
 
 // runRace() を実装してください
@@ -58,4 +73,9 @@ function timeout(ms) {
 function runRace() {
   clearLog('log-race');
   // ここにコードを書いてください
+  Promise.race([fetchData(), timeout(1000)]).then((result) => {
+    addLog("log-race", "✅:" + result)
+  }).catch((reason) => {
+    addLog("log-race", "⏱️:" + reason.message)
+  })
 }

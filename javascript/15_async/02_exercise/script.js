@@ -14,6 +14,10 @@ function addLog(text) {
  * =============================================
  */
 
+function delayMessage(msg, delay, logfunc) {
+  setTimeout(() => { logfunc(msg) }, delay)
+}
+
 function run() {
   const log = document.getElementById('log');
   log.innerHTML = '';

@@ -24,6 +24,14 @@ function addResult(text) {
  * =============================================
  */
 
+function Employee(name, department, salary) {
+  this.name = name;
+  this.department = department;
+  this.salary = salary;
+  this.introduce = () => this.name + "さん（" + this.department + "部）の給与は" + this.salary + "円です"
+  this.getRaise = (rate) => (this.salary *= (1 + rate / 100)).toFixed(0)
+}
+
 function runChallenge() {
   const list = document.getElementById('result-list');
   list.innerHTML = '';

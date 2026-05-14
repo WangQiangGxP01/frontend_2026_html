@@ -20,6 +20,13 @@ function addItem(text) {
  * =============================================
  */
 
+const book = {
+  title: "JavaScript入門",
+  author: "田中 一郎",
+  year: 2023,
+  pages: 320,
+}
+
 function run() {
   const list = document.getElementById('list');
   list.innerHTML = '';

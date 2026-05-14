@@ -14,6 +14,8 @@ function addItem(text) {
  * =============================================
  */
 
+const celsiusToFahrenheit = (c_temp) => Number(c_temp) * 9 / 5 + 32
+
 function run() {
   const list = document.getElementById('list');
   list.innerHTML = '';

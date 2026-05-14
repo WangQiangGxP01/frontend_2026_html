@@ -48,4 +48,12 @@ function addLog(message) {
 async function login(username, password) {
   logEl.innerHTML = '';
   // ここにコードを書いてください
+  try {
+    const auth_res = await authenticate(username, password)
+    const profile = await fetchProfile(auth_res.token)
+    addLog(Object.entries(profile).map((k, v) => addLog(String(k))))
+
+  } catch (error) {
+    addLog("ERROR:" + error.message)
+  }
 }

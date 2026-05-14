@@ -30,4 +30,11 @@ function run() {
    *    「○○: ○○円（在庫なし）」の形式で addItem() に渡す
    * =============================================
    */
+  shop = JSON.parse(jsonData)
+  console.log(shop)
+  for (const item of shop.products) {
+    const result = String(item.name) + ": " + item.price + "円（在庫:" + (Boolean(item.inStock) ? "あり" : "なし") + "）"
+    console.log(result)
+    addItem(result)
+  }
 }

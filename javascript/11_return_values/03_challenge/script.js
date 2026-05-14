@@ -25,6 +25,20 @@ function addResult(text) {
  * =============================================
  */
 
+function calcBMI(weight, height) {
+  return (Number(weight) / (Number(height) ** 2)).toFixed(2)
+}
+
+function getBMICategory(bmi) {
+  const table = [18.5, 25, 30]
+  const category = ["低体重", "普通体重", "過体重", "肥満"];
+  for (const [i, max_bmi] of table.entries()) {
+    if (bmi < max_bmi)
+      return category[i];
+  }
+  return category[category.length - 1];
+}
+
 function runChallenge() {
   const list = document.getElementById('result-list');
   list.innerHTML = '';

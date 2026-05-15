@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b7dccbb4.css",
+    "main.js": "/static/js/main.c557a993.js",
+    "static/media/curryrice.png": "/static/media/curryrice.c3ae2581e8ed6dfa49a2.png",
+    "index.html": "/index.html",
+    "main.b7dccbb4.css.map": "/static/css/main.b7dccbb4.css.map",
+    "main.c557a993.js.map": "/static/js/main.c557a993.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7dccbb4.css",
+    "static/js/main.c557a993.js"
+  ]
+}
